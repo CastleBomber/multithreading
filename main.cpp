@@ -6,6 +6,8 @@
  *  VS Code:
  * 	    c++ VS Code clang-formatter: shift+alt+f
  *
+ * Sources:
+ * https://www.tutorialspoint.com/cplusplus/cpp_multithreading.htm
  *
  *  Visual Studio:
  *      code folding: select region, ctrl+m+m
@@ -20,11 +22,25 @@
 #include <iostream>
 #include <stdio.h>
 #include <chrono>
-#include <pthread>
+#include <pthread.h>
 
 using namespace std;
 using namespace std::chrono;
 
+#define NUM_THREADS 5
+
 int main()
 {
+    pthread_t threads[NUM_THREADS];
+    int rc;
+    int i;
+
+    for (i = 0; i < NUM_THREADS; i++)
+    {
+        rc = pthread_create(&threads[i], NULL, PrintHello, (void *)i);
+
+        if ()
+        {
+        }
+    }
 }
